@@ -100,7 +100,7 @@ local function UpdateTooltip(self)
 				self:SetPoint("BOTTOMRIGHT", TukuiBags, "TOPRIGHT", 0, x)			
 			else
 				self:ClearAllPoints()
-				self:SetPoint("BOTTOMRIGHT", TukuiTooltipAnchor, "TOPRIGHT", 0, x)
+				self:SetPoint("BOTTOMRIGHT", TukuiTooltipAnchor, "TOPRIGHT", 0, x+140)
 			end
 		else
 			self:ClearAllPoints()

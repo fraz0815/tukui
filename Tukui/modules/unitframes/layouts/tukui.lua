@@ -826,13 +826,13 @@ local function Shared(self, unit)
 		
 		if C["unitframes"].totdebuffs == true and T.lowversion ~= true then
 			local debuffs = CreateFrame("Frame", nil, health)
-			debuffs:SetHeight(20)
+			debuffs:SetHeight(24)
 			debuffs:SetWidth(127)
-			debuffs.size = 20
+			debuffs.size = 24
 			debuffs.spacing = 2
-			debuffs.num = 6
+			debuffs.num = 5
 
-			debuffs:SetPoint("TOPLEFT", health, "TOPLEFT", -0.5, 24)
+			debuffs:SetPoint("TOPLEFT", health, "TOPLEFT", -0.5, 28)
 			debuffs.initialAnchor = "TOPLEFT"
 			debuffs["growth-y"] = "UP"
 			debuffs.PostCreateIcon = T.PostCreateAura
@@ -1576,9 +1576,9 @@ if C.arena.unitframes then
 	for i = 1, 5 do
 		arena[i] = oUF:Spawn("arena"..i, "TukuiArena"..i)
 		if i == 1 then
-			arena[i]:SetPoint("BOTTOMRIGHT", InvTukuiActionBarBackground, "TOPRIGHT", 0, 246)
+			arena[i]:SetPoint("TOPRIGHT", Minimap, "BOTTOMLEFT", -50, -200)
 		else
-			arena[i]:SetPoint("BOTTOM", arena[i-1], "TOP", 0, 35)
+			arena[i]:SetPoint("BOTTOM", arena[i-1], "BOTTOM", 0, -35)
 		end
 		arena[i]:Size(200, 29)
 	end
@@ -1598,9 +1598,11 @@ if C["unitframes"].showboss then
 	for i = 1, MAX_BOSS_FRAMES do
 		boss[i] = oUF:Spawn("boss"..i, "TukuiBoss"..i)
 		if i == 1 then
-			boss[i]:SetPoint("BOTTOMRIGHT", InvTukuiActionBarBackground, "TOPRIGHT", 0,246)
+			boss[i]:SetPoint("TOPRIGHT", Minimap, "BOTTOMLEFT", -50, -200)--boss[i]:SetPoint("BOTTOM", UIParent, "BOTTOM", 244, 294) --
+			--boss[i]:SetPoint("BOTTOMRIGHT", InvTukuiActionBarBackground, "TOPRIGHT", 0,246)
 		else
-			boss[i]:SetPoint('BOTTOM', boss[i-1], 'TOP', 0, 35)             
+			boss[i]:SetPoint('TOP', boss[i-1], 'BOTTOM', 0, -35)--boss[i]:SetPoint('BOTTOM', boss[i-1], 'TOP', 0, 35)       
+			--boss[i]:SetPoint('BOTTOM', boss[i-1], 'TOP', 0, 35)             
 		end
 		boss[i]:Size(200, 29)
 	end

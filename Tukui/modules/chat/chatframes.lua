@@ -59,14 +59,14 @@ local function SetChatStyle(frame)
 	tab:SetAlpha(1)
 	tab.SetAlpha = UIFrameFadeRemoveFrame
 	
-	if not C.chat.background then
+	--[[if not C.chat.background then
 		-- hide text when setting chat
 		_G[chat.."TabText"]:Hide()
 		
 		-- now show text if mouse is found over tab.
 		tab:HookScript("OnEnter", function() _G[chat.."TabText"]:Show() end)
 		tab:HookScript("OnLeave", function() _G[chat.."TabText"]:Hide() end)
-	end
+	end--]]
 	
 	-- yeah baby
 	_G[chat]:SetClampRectInsets(0,0,0,0)
@@ -78,8 +78,8 @@ local function SetChatStyle(frame)
 	_G[chat]:SetFading(false)
 	
 	-- set min height/width to original tukui size
-	_G[chat]:SetMinResize(371,111)
-	_G[chat]:SetMinResize(T.InfoLeftRightWidth + 1,111)
+	--_G[chat]:SetMinResize(371,111)
+	--_G[chat]:SetMinResize(T.InfoLeftRightWidth + 1,111)
 	
 	-- move the chat edit box
 	_G[chat.."EditBox"]:ClearAllPoints()
@@ -206,8 +206,8 @@ local function SetupChatPosAndFont(self)
 		-- also set original width and height of chatframes 1 and 4 if first time we run tukui.
 		-- doing resize of chat also here for users that hit "cancel" when default installation is show.
 		if i == 1 then
-			chat:Point("BOTTOMLEFT", TukuiInfoLeft, "TOPLEFT", 0, 6)
-			chat:Point("BOTTOMRIGHT", TukuiInfoLeft, "TOPRIGHT", 0, 6)
+			chat:Point("BOTTOMLEFT", TukuiInfoLeft, "TOPLEFT", 3, 7)
+			chat:Point("BOTTOMRIGHT", TukuiInfoLeft, "TOPRIGHT", 3, 7)
 			FCF_SavePositionAndDimensions(chat)
 		elseif i == 4 and name == LOOT then
 			if not chat.isDocked then

@@ -477,17 +477,25 @@ end
 
 T.PostUpdatePower = function(power, unit, min, max)
 	local self = power:GetParent()
-	local pType, pToken = UnitPowerType(unit)
+	local pType, pToken, ar, ag, ab = UnitPowerType(unit)
 	local color = T.oUF_colors.power[pToken]
 
 	if color then
 		power.value:SetTextColor(color[1], color[2], color[3])
+	elseif ((not color) and ar) then
+		power.value:SetTextColor(ar, ag, ab)
 	end
 
-	if not UnitIsPlayer(unit) and not UnitPlayerControlled(unit) or not UnitIsConnected(unit) then
+	--if not UnitIsPlayer(unit) and not UnitPlayerControlled(unit) and (UnitLevel(unit) ~= -1) and (UnitLevel(unit) ~= 87) or not UnitIsConnected(unit) or (min==0 and max==0) then
+	--	power.value:SetText()
+	if UnitIsDead(unit) or UnitIsGhost(unit) or (min==0 and max==0) then
 		power.value:SetText()
-	elseif UnitIsDead(unit) or UnitIsGhost(unit) then
-		power.value:SetText()
+	elseif (UnitLevel(unit) == -1) or (UnitLevel(unit) == 87) then
+			if pType == 0 then
+			power.value:SetFormattedText("%d%%", floor(min / max * 100))
+			else
+			power.value:SetText(min)
+			end
 	else
 		if min ~= max then
 			if pType == 0 then
@@ -581,7 +589,7 @@ T.PostCreateAura = function(element, button)
 	T.SetTemplate(button)
 	
 	button.remaining = T.SetFontString(button, C["media"].font, C["unitframes"].auratextscale, "THINOUTLINE")
-	button.remaining:Point("CENTER", 1, 0)
+	button.remaining:Point("TOPLEFT", 1, -1)
 	
 	button.cd.noOCC = true		 	-- hide OmniCC CDs
 	button.cd.noCooldownCount = true	-- hide CDC CDs
@@ -592,9 +600,9 @@ T.PostCreateAura = function(element, button)
 	button.icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
 	button.icon:SetDrawLayer('ARTWORK')
 	
-	button.count:Point("BOTTOMRIGHT", 3, 3)
+	button.count:Point("BOTTOMRIGHT", 0, 1)
 	button.count:SetJustifyH("RIGHT")
-	button.count:SetFont(C["media"].font, 9, "THICKOUTLINE")
+	button.count:SetFont(C["media"].font, 12, "THINOUTLINE")
 	button.count:SetTextColor(0.84, 0.75, 0.65)
 	
 	button.overlayFrame = CreateFrame("frame", nil, button, nil)

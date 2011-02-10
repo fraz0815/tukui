@@ -147,8 +147,10 @@ end
 
 oUF.TagEvents['Tukui:dead'] = 'UNIT_HEALTH'
 oUF.Tags['Tukui:dead'] = function(unit)
-	if UnitIsDeadOrGhost(unit) then
+	if UnitIsDead(unit) then
 		return L.unitframes_ouf_deaddps
+	elseif UnitIsGhost(unit) then
+		return L.unitframes_ouf_ghost
 	end
 end
 

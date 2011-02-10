@@ -204,3 +204,15 @@ if C["datatext"].battleground == true then
 	bgframe:SetFrameLevel(0)
 	bgframe:EnableMouse(true)
 end
+
+--fraz chat bg
+local chatbg = CreateFrame("Frame", "chatpanel", TukuiInfoLeft)
+chatbg:CreatePanel("Tukui",T.InfoLeftRightWidth, 130, "BOTTOM", ileft, "TOP", 0, 5)
+
+--sthreat
+local chatbgr = CreateFrame("Frame", "chatpanel2", TukuiInfoRight)
+chatbgr:CreatePanel("Tukui", 142, 130, "BOTTOMLEFT", iright, "TOPLEFT", 0, 5)
+
+--numeration
+local chatbgr2 = CreateFrame("Frame", "chatpanel3", TukuiInfoRight)
+chatbgr2:CreatePanel("Tukui", 405-168-11, 130, "BOTTOMRIGHT", iright, "TOPRIGHT", 0, TukuiDB.Scale(5))

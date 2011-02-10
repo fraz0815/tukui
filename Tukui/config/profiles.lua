@@ -19,3 +19,13 @@ if T.myname == "Tukz" then
 	C.actionbar.hideshapeshift = true
 	C.unitframes.enemyhcolor = true
 end
+
+if T.myname == "Fraz" then
+	C.actionbar.hideshapeshift = false
+end
+
+if T.myname == "Frazi" then
+	C.unitframes.gridonly = true
+	C.unitframes.playeraggro = true
+	C.unitframes.showplayerinparty = true
+end

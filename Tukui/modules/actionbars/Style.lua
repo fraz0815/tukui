@@ -10,7 +10,7 @@ local function style(self)
 	local name = self:GetName()
 	
 	--> fixing a taint issue while changing totem flyout button in combat.
-	if name:match("MultiCastActionButton") then return end 
+	if name:match("MultiCast") then return end 
 	
 	local action = self.action
 	local Button = self
@@ -145,6 +145,8 @@ local function updatehotkey(self, actionButtonType)
 	text = replace(text, '(c%-)', 'C')
 	text = replace(text, '(Mouse Button )', 'M')
 	text = replace(text, '(Middle Mouse)', 'M3')
+	text = replace(text, '(Mouse Wheel Up)', 'MU')
+	text = replace(text, '(Mouse Wheel Down)', 'MD')
 	text = replace(text, '(Num Pad )', 'N')
 	text = replace(text, '(Page Up)', 'PU')
 	text = replace(text, '(Page Down)', 'PD')
@@ -420,9 +422,7 @@ local function StyleTotemActionButton(button, index)
 	icon:Point("BOTTOMRIGHT",button,"BOTTOMRIGHT",-2,2)
 	button.overlayTex:SetTexture(nil)
 	button.overlayTex:Hide()
-	button:GetNormalTexture():GetRegions():SetAlpha(0)
-	--button:GetNormalTexture():SetTexture(nil)
-	--button.SetNormalTexture = T.dummy               This is fucking up something and causing a taint
+	button:GetNormalTexture():SetAlpha(0)
 	if not InCombatLockdown() and button.slotButton then
 		button:ClearAllPoints()
 		button:SetAllPoints(button.slotButton)

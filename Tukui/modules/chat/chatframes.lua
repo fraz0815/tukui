@@ -59,14 +59,14 @@ local function SetChatStyle(frame)
 	tab:SetAlpha(1)
 	tab.SetAlpha = UIFrameFadeRemoveFrame
 	
-	--[[if not C.chat.background then
+	if not C.chat.background then
 		-- hide text when setting chat
 		_G[chat.."TabText"]:Hide()
 		
 		-- now show text if mouse is found over tab.
 		tab:HookScript("OnEnter", function() _G[chat.."TabText"]:Show() end)
 		tab:HookScript("OnLeave", function() _G[chat.."TabText"]:Hide() end)
-	end--]]
+	end
 	
 	-- yeah baby
 	_G[chat]:SetClampRectInsets(0,0,0,0)
@@ -207,14 +207,18 @@ local function SetupChatPosAndFont(self)
 		-- doing resize of chat also here for users that hit "cancel" when default installation is show.
 		if i == 1 then
 			chat:Point("BOTTOMLEFT", TukuiInfoLeft, "TOPLEFT", 3, 7)
-			chat:Point("BOTTOMRIGHT", TukuiInfoLeft, "TOPRIGHT", 3, 7)
+			chat:Point("BOTTOMRIGHT", TukuiInfoLeft, "TOPRIGHT", -3, 7)
+			chat:Point("TOPLEFT", TukuiInfoLeft, "TOPLEFT", 3, 138)
+			chat:Point("TOPRIGHT", TukuiInfoLeft, "TOPRIGHT", -3, 138)
+			
+			
 			FCF_SavePositionAndDimensions(chat)
 		elseif i == 4 and name == LOOT then
 			if not chat.isDocked then
 				chat:ClearAllPoints()
 				chat:Point("BOTTOMRIGHT", TukuiInfoRight, "TOPRIGHT", 0, 6)
 				chat:Point("BOTTOMLEFT", TukuiInfoRight, "TOPLEFT", 0, 6)
-				chat:SetJustifyH("RIGHT") 
+				chat:SetJustifyH("LEFT") 
 				FCF_SavePositionAndDimensions(chat)
 			end
 		end

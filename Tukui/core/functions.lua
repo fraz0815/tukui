@@ -486,9 +486,9 @@ T.PostUpdatePower = function(power, unit, min, max)
 		power.value:SetTextColor(ar, ag, ab)
 	end
 
-	--if not UnitIsPlayer(unit) and not UnitPlayerControlled(unit) and (UnitLevel(unit) ~= -1) and (UnitLevel(unit) ~= 87) or not UnitIsConnected(unit) or (min==0 and max==0) then
-	--	power.value:SetText()
-	if UnitIsDead(unit) or UnitIsGhost(unit) or (min==0 and max==0) then
+	if not UnitIsPlayer(unit) and not UnitPlayerControlled(unit) and (UnitLevel(unit) ~= -1) and (UnitLevel(unit) ~= 87) or not UnitIsConnected(unit) or (min==0 and max==0) then
+		power.value:SetText()
+	elseif UnitIsDead(unit) or UnitIsGhost(unit) then
 		power.value:SetText()
 	elseif (UnitLevel(unit) == -1) or (UnitLevel(unit) == 87) then
 			if pType == 0 then

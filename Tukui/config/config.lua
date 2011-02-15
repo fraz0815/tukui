@@ -52,6 +52,9 @@ C["unitframes"] = {
 	
 	-- class bar
 	["classbar"] = true,                                -- enable tukui classbar over player unit
+	
+	--threatbar bottom right
+	["threatbar"] = false,
 }
 
 C["arena"] = {
@@ -145,7 +148,7 @@ C["tooltip"] = {
 
 C["merchant"] = {
 	["sellgrays"] = true,                               -- automaticly sell grays?
-	["autorepair"] = false,                              -- automaticly repair?
+	["autorepair"] = true,                              -- automaticly repair?
 	["sellmisc"] = true,                                -- sell defined items automatically
 }
 

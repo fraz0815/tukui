@@ -231,4 +231,28 @@ chatbgr:CreatePanel("Tukui", 142, 130, "BOTTOMLEFT", iright, "TOPLEFT", 0, 5)
 
 --numeration
 local chatbgr2 = CreateFrame("Frame", "chatpanel3", TukuiInfoRight)
-chatbgr2:CreatePanel("Tukui", 405-168-11, 130, "BOTTOMRIGHT", iright, "TOPRIGHT", 0, TukuiDB.Scale(5))
+chatbgr2:CreatePanel("Tukui", 405-168-11, 130, "BOTTOMRIGHT", iright, "TOPRIGHT", 0, 5)
+
+--hide those panels in pvp
+local hidepvp = CreateFrame("Frame", nil, UIParent)
+hidepvp:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+hidepvp:RegisterEvent("PLAYER_ENTERING_WORLD")
+hidepvp:SetScript("OnEvent", function(self, event)
+	local isInstance, instanceType = IsInInstance()
+	local pvpType = GetZonePVPInfo()
+	if (isInstance and (instanceType == "pvp" or instanceType == "arena")) or pvpType == "combat" then		
+		chatbgr:Hide()
+		chatbgr2:Hide()
+		NumerationFrame:Hide()
+		TukuiZoneMap:SetScale(1)
+		TukuiZoneMap:SetAlpha(1)
+		--TukuiZoneMap:Show()
+	else
+		chatbgr:Show()
+		chatbgr2:Show()
+		NumerationFrame:Show()
+		--TukuiZoneMap:Hide()
+		TukuiZoneMap:SetScale(0.00001)
+		TukuiZoneMap:SetAlpha(0)
+	end
+end)

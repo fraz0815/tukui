@@ -2,13 +2,13 @@ local T, C, L = unpack(select(2, ...)) -- Import: T - functions, constants, vari
 if not C["map"].enable == true then return end
 
 -- BG TINY MAP (BG, mining, etc)
-local tinymap = CreateFrame("Frame", "TukuiZoneMap", UIParent)
+local tinymap = CreateFrame("Frame", "TukuiZoneMap", TukuiInfoRight)
 tinymap:SetPoint("CENTER")
 tinymap:SetSize(223, 150)
 tinymap:EnableMouse(true)
 tinymap:SetMovable(true)
 tinymap:RegisterEvent("ADDON_LOADED")
-tinymap:SetPoint("CENTER", UIParent, 0, 0)
+tinymap:SetPoint("CENTER", TukuiInfoRight, "CENTER", 0, T.Scale(80+23/2))
 tinymap:SetFrameLevel(20)
 tinymap:Hide()
 

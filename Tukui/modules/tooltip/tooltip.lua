@@ -97,15 +97,18 @@ local function UpdateTooltip(self)
 		elseif point == "BOTTOMRIGHT" or point == "RIGHT" then
 			if TukuiBags and TukuiBags:IsShown() then
 				self:ClearAllPoints()
-				self:SetPoint("BOTTOMRIGHT", TukuiBags, "TOPRIGHT", 0, x)			
-			else
+				self:SetPoint("BOTTOMLEFT", TukuiBags, "TOPLEFT", 0, x)	
+			elseif TukuiZoneMap:IsShown() and TukuiZoneMap:GetScale() == 1 then
 				self:ClearAllPoints()
-				self:SetPoint("BOTTOMRIGHT", TukuiTooltipAnchor, "TOPRIGHT", 0, x+140)
+				self:SetPoint("BOTTOMLEFT", TukuiZoneMap, "TOPLEFT", 0, x)
+			else 
+				self:ClearAllPoints()
+				self:SetPoint("BOTTOMLEFT", TukuiInfoRight, "TOPLEFT", 0, x+135)
 			end
 		else
 			self:ClearAllPoints()
-			self:SetPoint("BOTTOM", TukuiTooltipAnchor, "TOP", 0, x)		
-		end
+			self:SetPoint("BOTTOMLEFT", TukuiInfoRight, "TOPLEFT", 0, x+135)	
+		end	
 	end
 end
 

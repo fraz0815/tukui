@@ -227,7 +227,7 @@ chatbg:CreatePanel("Tukui",T.InfoLeftRightWidth, 130, "BOTTOM", ileft, "TOP", 0,
 
 --sthreat
 local chatbgr = CreateFrame("Frame", "chatpanel2", TukuiInfoRight)
-chatbgr:CreatePanel("Tukui", 142, 130, "BOTTOMLEFT", iright, "TOPLEFT", 0, 5)
+chatbgr:CreatePanel("Tukui", 137, 130, "BOTTOMLEFT", iright, "TOPLEFT", 0, 5)
 
 --numeration
 local chatbgr2 = CreateFrame("Frame", "chatpanel3", TukuiInfoRight)

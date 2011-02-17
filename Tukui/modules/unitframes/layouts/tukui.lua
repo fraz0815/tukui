@@ -1590,7 +1590,7 @@ if C.arena.unitframes then
 		if i == 1 then
 			arena[i]:SetPoint("TOPRIGHT", Minimap, "BOTTOMLEFT", -50, -200)
 		else
-			arena[i]:SetPoint("BOTTOM", arena[i-1], "BOTTOM", 0, -35)
+			arena[i]:SetPoint("TOP", arena[i-1], "BOTTOM", 0, -35)
 		end
 		arena[i]:Size(200, 29)
 	end

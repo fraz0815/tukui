@@ -40,6 +40,8 @@ C["media"] = {
 	["bordercolor"] = { .6,.6,.6 }, -- border color of tukui panels
 	["altbordercolor"] = { .4,.4,.4 }, -- alternative border color, mainly for unitframes text panels.
 	["backdropcolor"] = { .1,.1,.1 }, -- background color of tukui panels
+	--["valuecolor"] = {23/255,132/255,209/255}, -- color for values of datatexts
+	["valuecolor"] = {255/255,255/255,255/255}, -- color for values of datatexts
 	["buttonhover"] = [[Interface\AddOns\Tukui\medias\textures\button_hover]],
 	
 	-- sound

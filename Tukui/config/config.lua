@@ -95,6 +95,7 @@ C["cooldown"] = {
 }
 
 C["datatext"] = {
+	["stat1"] = 7,
 	["fps_ms"] = 4,                                     -- show fps and ms on panels
 	["system"] = 5,                                     -- show total memory and others systems infos on panels
 	["bags"] = 0,                                       -- show space used in bags on panels
@@ -105,7 +106,7 @@ C["datatext"] = {
 	["friends"] = 3,                                    -- show number of friends connected.
 	["dps_text"] = 0,                                   -- show a dps meter on panels
 	["hps_text"] = 0,                                   -- show a heal meter on panels
-	["power"] = 7,                                      -- show your attackpower/spellpower/healpower/rangedattackpower whatever stat is higher gets displayed
+	["power"] = 0,                                      -- show your attackpower/spellpower/healpower/rangedattackpower whatever stat is higher gets displayed
 	["haste"] = 0,                                      -- show your haste rating on panels.
 	["crit"] = 0,                                       -- show your crit rating on panels.
 	["avd"] = 0,                                        -- show your current avoidance against the level of the mob your targeting

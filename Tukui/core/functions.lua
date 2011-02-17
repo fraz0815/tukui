@@ -270,6 +270,10 @@ RoleUpdater:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
 RoleUpdater:SetScript("OnEvent", CheckRole)
 CheckRole()
 
+-- convert datatext E.ValColor from rgb decimal to hex DO NOT TOUCH
+local r, g, b = unpack(C["media"].valuecolor)
+T.ValColor = ("|cff%.2x%.2x%.2x"):format(r * 255, g * 255, b * 255)
+
 --Return short value of a number
 function T.ShortValue(v)
 	if v >= 1e6 then

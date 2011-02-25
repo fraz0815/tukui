@@ -256,3 +256,18 @@ hidepvp:SetScript("OnEvent", function(self, event)
 		TukuiZoneMap:SetAlpha(0)
 	end
 end)
+
+--hide those panels in pvp
+
+--[[
+local hidecombat = CreateFrame("Frame", nil, UIParent)
+hidecombat:RegisterEvent("PLAYER_REGEN_ENABLED")
+hidecombat:RegisterEvent("PLAYER_REGEN_DISABLED")
+hidecombat:SetScript("OnEvent", function(self, event)
+	if event=="PLAYER_REGEN_DISABLED" then
+	NAME_OF_YOUR_FORTE_PANEL:Hide()
+	elseif event=="PLAYER_REGEN_ENABLED" then
+	NAME_OF_YOUR_FORTE_PANEL:Show()
+	end
+end)
+]]--

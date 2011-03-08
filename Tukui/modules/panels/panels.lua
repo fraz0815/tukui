@@ -269,3 +269,4 @@ hidecombat:SetScript("OnEvent", function(self, event)
 	end
 end)
 ]]--
+

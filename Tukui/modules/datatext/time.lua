@@ -107,7 +107,7 @@ local function Update(self, t)
 	
 	local Hr, Min, AmPm = CalculateTimeValues()
 	
-	if CalendarGetNumPendingInvites() > 0 then
+	if GameTimeFrame.flashInvite then   -- if CalendarGetNumPendingInvites() > 0 then
 		Text:SetTextColor(1, 0, 0)
 	else
 		Text:SetTextColor(1, 1, 1)

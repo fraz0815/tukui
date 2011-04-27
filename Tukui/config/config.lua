@@ -99,7 +99,7 @@ C["datatext"] = {
 	["fps_ms"] = 4,                                     -- show fps and ms on panels
 	["system"] = 5,                                     -- show total memory and others systems infos on panels
 	["bags"] = 0,                                       -- show space used in bags on panels
-	["gold"] = 6,                                       -- show your current gold on panels
+	["gold"] = 0,                                       -- show your current gold on panels
 	["wowtime"] = 8,                                    -- show time on panels
 	["guild"] = 1,                                      -- show number on guildmate connected on panels
 	["dur"] = 2,                                        -- show your equipment durability on panels.
@@ -115,6 +115,7 @@ C["datatext"] = {
 	["hit"] = 0,
 	["mastery"] = 0,
 	["micromenu"] = 0,
+	["gold_history"] = 6,
 
 	["battleground"] = true,                            -- enable 3 stats in battleground only that replace stat1,stat2,stat3.
 	["time24"] = true,                                  -- set time to 24h format.

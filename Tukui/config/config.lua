@@ -84,6 +84,7 @@ C["bags"] = {
 
 C["map"] = {
 	["enable"] = true,                                  -- reskin the map to fit tukui
+	["colorborder"] = false,							-- recolors minimap border if mail/calendar invites
 }
 
 C["loot"] = {
@@ -102,7 +103,7 @@ C["datatext"] = {
 	["fps_ms"] = 4,                                     -- show fps and ms on panels
 	["system"] = 5,                                     -- show total memory and others systems infos on panels
 	["bags"] = 0,                                       -- show space used in bags on panels
-	["gold"] = 6,                                       -- show your current gold on panels
+	["gold"] = 0,                                       -- show your current gold on panels
 	["wowtime"] = 8,                                    -- show time on panels
 	["guild"] = 1,                                      -- show number on guildmate connected on panels
 	["dur"] = 2,                                        -- show your equipment durability on panels.

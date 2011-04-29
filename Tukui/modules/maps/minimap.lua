@@ -124,8 +124,9 @@ TukuiMinimap:SetScript("OnEvent", function(self, event, addon)
 		TimeManagerClockButton:Kill()
 	else
 		local inv = CalendarGetNumPendingInvites()
+		local inv2 = GameTimeFrame.flashInvite
 		local mail = HasNewMail()
-		if inv > 0 and mail then -- New invites and mail
+		if inv2 and mail and C["map"].colorborder then -- New invites and mail
 			TukuiMinimap:SetBackdropBorderColor(1, .5, 0)
 			if TukuiMinimapStatsLeft then
 				TukuiMinimapStatsLeft:SetBackdropBorderColor(1, .5, 0)
@@ -133,7 +134,7 @@ TukuiMinimap:SetScript("OnEvent", function(self, event, addon)
 			if TukuiMinimapStatsRight then
 				TukuiMinimapStatsRight:SetBackdropBorderColor(1, .5, 0)
 			end
-		elseif inv > 0 and not mail then -- New invites and no mail
+		elseif inv2 and not mail and C["map"].colorborder then -- New invites and no mail
 			TukuiMinimap:SetBackdropBorderColor(1, 30/255, 60/255)
 			if TukuiMinimapStatsLeft then
 				TukuiMinimapStatsLeft:SetBackdropBorderColor(1, 30/255, 60/255)
@@ -141,7 +142,7 @@ TukuiMinimap:SetScript("OnEvent", function(self, event, addon)
 			if TukuiMinimapStatsRight then
 				TukuiMinimapStatsRight:SetBackdropBorderColor(1, 30/255, 60/255)
 			end
-		elseif inv==0 and mail then -- No invites and new mail
+		elseif not inv2 and mail and C["map"].colorborder then -- No invites and new mail
 			TukuiMinimap:SetBackdropBorderColor(0, 1, 0)
 			if TukuiMinimapStatsLeft then
 				TukuiMinimapStatsLeft:SetBackdropBorderColor(0, 1, 0)

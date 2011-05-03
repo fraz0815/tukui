@@ -32,7 +32,7 @@ C["unitframes"] = {
 	["combatfeedback"] = false,                          -- enable combattext on player and target.
 	["playeraggro"] = false,                             -- color player border to red if you have aggro on current target.
 	["healcomm"] = true,                               -- enable healprediction support.
-	["onlyselfdebuffs"] = false,                        -- display only our own debuffs applied on target
+	["onlyselfdebuffs"] = true,                        -- display only our own debuffs applied on target
 	["showfocustarget"] = true,                         -- show focus target
 	["bordercolor"] = { .4,.4,.4 },                     -- unit frames panel border color
 
